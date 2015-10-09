@@ -49,9 +49,9 @@ augroup filetype_settings
 augroup END
 " }}}1
 " Plugins {{{1
-let g:CommandTMaxFiles=25000
 let g:SuperTabNoCompleteAfter = ['^', '\s']
 let g:syntastic_always_populate_loc_list = 1
+let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_open_multiple_files = 'tjr'
 au VimEnter,VimResized * let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:' . &lines
 
