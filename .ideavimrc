@@ -1,2 +1,6 @@
+set hlsearch
+set smartcase
+set ignorecase
+
 noremap H ^
 noremap L $
