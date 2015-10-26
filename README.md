@@ -7,3 +7,7 @@ To use, create symlinks for `.vimrc`, `.gvimrc` and `.vim` in your home director
     ln -s Projects/vim-config/.vimrc ~/.vimrc
     ln -s Projects/vim-config/.gvimrc ~/.gvimrc
     ln -s Projects/vim-config/.vim ~/.vim
+
+Optionally, create a symlink for `.ideavimrc` as well:
+
+    ln -s Projects/vim-config/.ideavimrc ~/.ideavimrc
