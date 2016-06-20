@@ -13,13 +13,14 @@ highlight nonascii guibg=Red ctermbg=1
 
 let maplocalleader=","
 
-set number
+set relativenumber
 set ruler
 
 set hlsearch
 set incsearch
 set smartcase
 set ignorecase
+set gdefault
 
 set tabstop=8
 set expandtab
@@ -28,15 +29,22 @@ set softtabstop=4
 set smarttab
 set autoindent
 set smartindent
-set list listchars=tab:>-,trail:·
+set list listchars=tab:▸\ ,trail:·
 
 set nowrap
+set scrolloff=3
+set hidden
+set visualbell
+set cursorline
+set laststatus=2
 
-set wildmode=longest:full
 set wildmenu
+set wildmode=longest:full
 
 set directory=~/.vim/swp//
 set backupdir=~/.vim/backup//
+set undofile
+set undodir=~/.vim/undo//
 
 set grepprg=grep\ -n\ -R\ --exclude=*.pyc\ --exclude-dir=.git\ $*\ /dev/null
 " }}}1
@@ -51,6 +59,7 @@ augroup END
 " Plugins {{{1
 let g:SuperTabNoCompleteAfter = ['^', '\s']
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_html_tidy_ignore_errors = ['<textarea> proprietary attribute "placeholder"']
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_open_multiple_files = 'tjr'
 au VimEnter,VimResized * let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:' . &lines
@@ -67,7 +76,7 @@ call pathogen#helptags()
 " inoremap <Down> <nop>
 " inoremap <Left> <nop>
 " inoremap <Right> <nop>
-" inoremap <esc> <nop>
+inoremap <esc> <nop>
 " }}}1
 " Edit/Source .vimrc {{{1
 nnoremap <leader>E :split $MYVIMRC<cr>
@@ -80,13 +89,17 @@ onoremap <silent> F :<C-U>normal! 0f(hviw<CR>
 noremap H ^
 noremap L g_
 nnoremap / /\v
+vnoremap / /\v
 nnoremap ? ?\v
+vnoremap ? ?\v
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 nnoremap <space> za
 vnoremap <space> zf
+nnoremap <tab> %
+vnoremap <tab> %
 " }}}1
 " Clist and Llist {{{1
 noremap <Leader>l :clist<CR>
