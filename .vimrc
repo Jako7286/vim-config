@@ -58,8 +58,6 @@ augroup END
 " }}}1
 " Plugins {{{1
 let g:SuperTabNoCompleteAfter = ['^', '\s']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_html_tidy_ignore_errors = ['<textarea> proprietary attribute "placeholder"']
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_open_multiple_files = 'tjr'
 au VimEnter,VimResized * let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:' . &lines
@@ -121,8 +119,6 @@ noremap <LocalLeader>t :!coverage run --branch ../tests/test_runner.py<CR>:Highl
 noremap <LocalLeader>h :HighlightCoverage<CR>
 " }}}1
 " Cleanup and formatting {{{1
-highlight SyntasticErrorLine guibg=#300000
-highlight SyntasticWarningLine guibg=#202000
 highlight! link SpellBad Error
 highlight! link SpellCap ToDo
 command! NomNom :%s/\s\+$\|\($\n\s*\)\+\%$//e
