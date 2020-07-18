@@ -61,9 +61,6 @@ let g:SuperTabNoCompleteAfter = ['^', '\s']
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_open_multiple_files = 'tjr'
 au VimEnter,VimResized * let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:' . &lines
-
-call pathogen#infect()
-call pathogen#helptags()
 " }}}1
 " Force learning {{{1
 " noremap <Up> <nop>
